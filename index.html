@@ -1,0 +1,24 @@
+<oody>
+
+  <script>
+    // ?u=https://google.com/&u=https://www.bing.com/
+    const params = new URLSearchParams(window.location.search);
+    console.table([...params.entries()])
+
+    const urls = params.getAll('u').filter(u => u);
+    if (urls.length > 0) {
+      urls.forEach(u => {
+        const win = window.open(u, '_blank', 'noopener');
+      });
+
+      const p = document.createElement('p');
+      p.style.float = 'right';
+      p.textContent = 'If pop-ups are blocked, click "Allow all pop-ups and redirects.." and reload';
+      document.body.appendChild(p);
+    } else {
+      const p = document.createElement('p');
+      p.textContent = 'To use, add e.g. "?u=https://google.com/&u=https://www.bing.com/" to URL';
+      document.body.appendChild(p);
+    }
+  </script>
+</oody>
