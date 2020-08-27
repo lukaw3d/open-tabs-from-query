@@ -1,4 +1,29 @@
 <body>
+  <form method="GET" style="display: none;">
+    <p>To use, add urls and submit</p>
+
+    <input value="https://google.com/" name="u"><br>
+    <input value="https://www.bing.com/" name="u"><br>
+
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input name="u"><br>
+    <input type="submit">
+  </form>
 
   <p class="blocked" style="display: none; float: right;">
     If pop-ups are blocked, click "Allow all pop-ups and redirects.." and reload
@@ -17,9 +42,7 @@
 
       document.querySelector('.blocked').style.display = 'block';
     } else {
-      const p = document.createElement('p');
-      p.textContent = 'To use, add e.g. "?u=https://google.com/&u=https://www.bing.com/" to URL';
-      document.body.appendChild(p);
+      document.querySelector('form').style.display = 'block';
     }
   </script>
 </body>
