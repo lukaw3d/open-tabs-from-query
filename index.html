@@ -1,5 +1,9 @@
 <body>
 
+  <p class="blocked" style="display: none; float: right;">
+    If pop-ups are blocked, click "Allow all pop-ups and redirects.." and reload
+  </p>
+
   <script>
     // ?u=https://google.com/&u=https://www.bing.com/
     const params = new URLSearchParams(window.location.search);
@@ -11,10 +15,7 @@
         const win = window.open(u, '_blank', 'noopener');
       });
 
-      const p = document.createElement('p');
-      p.style.float = 'right';
-      p.textContent = 'If pop-ups are blocked, click "Allow all pop-ups and redirects.." and reload';
-      document.body.appendChild(p);
+      document.querySelector('.blocked').style.display = 'block';
     } else {
       const p = document.createElement('p');
       p.textContent = 'To use, add e.g. "?u=https://google.com/&u=https://www.bing.com/" to URL';
